@@ -1,0 +1,12 @@
+Linux report of a recent version.
+
+I'm not related to the project, i just fixed the case sensetivity typos and unnecessary Windows headers. 
+I also added a Cmake build, since there were only VS build files. Enjoy.
+
+For more information:
+
+http://sourceforge.net/projects/cvblobslib
+http://opencv.willowgarage.com/wiki/cvBlobsLib
+
+Most recent version:
+https://cvblobslib.svn.sourceforge.net/svnroot/cvblobslib
