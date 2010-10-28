@@ -1,7 +1,42 @@
-Linux report of a recent version.
+Linux re-port of a recent version.
 
 I'm not related to the project, i just fixed the case sensetivity typos and unnecessary Windows headers. 
 I also added a Cmake build, since there were only VS build files. Enjoy.
+
+Compile:
+
+$ cd cvblobslib
+$ cmake .
+$ make -jX 				# Where is is the number of cpu cores + 1
+
+Install:
+
+$ sudo make install		# To install into /usr/local/
+
+Run example:
+
+$ cd bin
+$ ./blobTest
+
+Include in your stuff:
+
+#include <cvblobs/Blob.h>
+
+Compile and Link in your stuff:
+
+This is a example of a CMakeLists.txt to compile the Test with installed cvblobslib.
+
+cmake_minimum_required(VERSION 2.8)
+
+FIND_PACKAGE( OpenCV REQUIRED )
+
+add_executable(blobTest blobTest.cpp)
+
+target_link_libraries(blobTest cvblobs ${OpenCV_LIBS})
+
+If your cvblobslib is not installed in /usr/, you also can link it locally:
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -L/home/user/foo/cvblobslib/lib")
+
 
 For more information:
 
@@ -10,3 +45,4 @@ http://opencv.willowgarage.com/wiki/cvBlobsLib
 
 Most recent version:
 https://cvblobslib.svn.sourceforge.net/svnroot/cvblobslib
+
